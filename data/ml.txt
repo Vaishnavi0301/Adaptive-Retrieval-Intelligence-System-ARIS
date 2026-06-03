@@ -1,0 +1,13 @@
+Machine learning is a subset of artificial intelligence that focuses on building systems that learn from data. Rather than being explicitly programmed to perform a task, these systems learn from experience. The core idea is that systems can identify patterns and make decisions with minimal human intervention.
+
+Supervised learning is the most common type of machine learning. In supervised learning, the algorithm learns from a labelled training dataset where each example includes an input and the desired output. Examples include classification tasks like spam detection and image recognition, and regression tasks like house price prediction.
+
+Unsupervised learning deals with unlabelled data. The algorithm must discover the underlying structure on its own. Clustering groups similar data points together — K-means and DBSCAN are popular algorithms. Dimensionality reduction compresses data while preserving structure — PCA and t-SNE are widely used.
+
+Reinforcement learning trains an agent to make decisions by rewarding desirable behaviour and penalising undesirable behaviour. The agent interacts with an environment and learns a policy that maximises cumulative reward. Applications include game playing like AlphaGo, robotic control, and recommendation systems.
+
+Deep learning uses neural networks with many layers. These deep networks automatically learn hierarchical representations of data. Convolutional Neural Networks excel at image tasks. Recurrent Neural Networks and Transformers handle sequential data like text.
+
+Overfitting occurs when a model performs well on training data but poorly on unseen data. Regularisation techniques like L1 and L2 add penalty terms to the loss function. Dropout randomly deactivates neurons during training. Early stopping halts training when validation loss increases.
+
+Evaluation metrics depend on the task. For classification: accuracy, precision, recall, F1-score, and AUC-ROC. For regression: MAE, MSE, RMSE, and R-squared. Cross-validation provides a more robust estimate of generalisation performance.

@@ -1,0 +1,15 @@
+Retrieval-Augmented Generation (RAG) is a technique that enhances large language models by grounding them in external knowledge retrieved at inference time. Instead of relying solely on knowledge baked into model weights during training, RAG retrieves relevant documents and provides them as context to the generation model.
+
+The RAG pipeline has three main stages: indexing, retrieval, and generation. During indexing, documents are chunked into passages, encoded into dense vectors using an embedding model, and stored in a vector database. At query time, the question is encoded and the most similar passages are retrieved. These passages are prepended to the prompt so the language model generates a grounded answer.
+
+Vector databases such as FAISS, Pinecone, Weaviate, and Qdrant are used for similarity search. FAISS supports both flat exact search and approximate indices like IVF and HNSW which trade small accuracy loss for significant speed gains at scale.
+
+Dense retrieval uses embedding models to encode text into vectors and find semantically similar documents. It excels at conceptual and paraphrase matching but can miss exact keyword matches. BM25 sparse retrieval captures exact lexical matches and works well on proper nouns, codes, and acronyms, but misses semantic similarity.
+
+Hybrid retrieval combines dense and sparse retrieval signals. Combining both via Reciprocal Rank Fusion (RRF) consistently outperforms either alone, especially on queries containing rare terms or proper nouns. RRF scores documents based on their rank position across both retrievers: score = 1 / (k + rank), making it robust to score-scale differences.
+
+Chunking strategy significantly impacts RAG quality. Chunks that are too large introduce noisy context. Chunks that are too small may split relevant information across boundaries. Common approaches include fixed-size character chunking with overlap and sentence-boundary-aware chunking.
+
+Re-ranking is a post-retrieval step that reorders results before generation. Cross-encoder models score query-document pairs jointly for more precise relevance. The trade-off is latency: cross-encoders are significantly slower than bi-encoders used in initial retrieval.
+
+Advanced RAG patterns include query rewriting, HyDE (Hypothetical Document Embeddings), and multi-hop RAG for questions requiring chained reasoning across multiple documents.

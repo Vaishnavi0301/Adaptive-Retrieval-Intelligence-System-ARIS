@@ -1,0 +1,17 @@
+Neural networks consist of interconnected nodes organised in layers: an input layer, hidden layers, and an output layer. Each connection has a weight, and each neuron applies an activation function to its weighted inputs.
+
+Training involves forward propagation to compute predictions and backward propagation to compute gradients and update weights. The loss function measures prediction error — cross-entropy for classification, mean squared error for regression.
+
+Activation functions introduce non-linearity. ReLU (Rectified Linear Unit) computes f(x) = max(0, x) and is the default for hidden layers due to its simplicity and resistance to the vanishing gradient problem. GELU and Swish are smoother variants popular in Transformer models.
+
+Batch normalisation stabilises training by normalising layer outputs to zero mean and unit variance. It accelerates convergence, allows higher learning rates, and acts as a regulariser. Layer normalisation normalises across the feature dimension and is used in Transformers.
+
+Convolutional layers apply learned filters across input data, sharing weights spatially. This gives CNNs translation invariance and reduces parameters compared to fully connected layers. Modern architectures like ResNet, EfficientNet, and ConvNeXt excel at vision tasks.
+
+The attention mechanism allows models to weigh the importance of different input elements. Self-attention computes pairwise similarities between all positions in a sequence. Multi-head attention runs several attention operations in parallel. Positional encodings provide sequence order since attention is permutation-invariant.
+
+The Transformer architecture, introduced in "Attention is All You Need" (2017), relies entirely on attention mechanisms rather than recurrence. It replaced RNNs because it processes sequences in parallel rather than sequentially, enables much longer-range dependencies, and scales better with data and compute. Models like BERT, GPT, and T5 are Transformer-based.
+
+Transfer learning leverages models pre-trained on large datasets and fine-tuned for specific tasks. Parameter-efficient fine-tuning methods like LoRA update only a small fraction of parameters, dramatically reducing compute while preserving performance.
+
+Hyperparameter tuning is crucial. Key hyperparameters include learning rate (most important), batch size, number of layers, dropout rate, and weight decay. Tools like Optuna automate the search process.
