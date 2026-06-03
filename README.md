@@ -245,7 +245,7 @@ Adaptive-Retrieval-Intelligence-System-ARIS/
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/AdithyaRaoK14/Adaptive-Retrieval-Intelligence-System-ARIS.git
+git clone https://github.com/Vaishnavi0301/Adaptive-Retrieval-Intelligence-System-ARIS.git
 cd Adaptive-Retrieval-Intelligence-System-ARIS
 ```
 
